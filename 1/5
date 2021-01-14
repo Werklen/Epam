@@ -1,0 +1,9 @@
+//5 Секунды во временной формат
+int a = sc.nextInt();
+System.out.println(a);
+int b = a / 60;
+int s = a - b * 60;
+int h = b / 60;
+int m = b - h * 60;
+System.out.println(h + ":" + m + ":" + s);
+sc.close();
