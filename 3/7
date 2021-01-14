@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+System.out.print("Введите промежуток: ");
+int m = sc.nextInt(), n = sc.nextInt();
+for (int i = m; i <= n; i++) {
+    int k = 2;
+    int count = 0;
+    System.out.print("Число " + i + ": ");
+    while (k <= i / 2) {
+        if (i % k == 0) {
+            System.out.print(k + " ");
+            count++;
+        }
+        k++;
+    }
+    if (i == 2 || i == 1) {
+        System.out.print("По условию нет таких чисел.");
+    }
+    if (count == 0 && i != 2 && i != 1) {
+        System.out.print("Число простое.");
+    }
+    System.out.println();
+}
+sc.close();
