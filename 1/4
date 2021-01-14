@@ -1,4 +1,6 @@
 //4
+import java.util.Scanner;
+
 Scanner sc = new Scanner(System.in);
 double a = sc.nextDouble();
 double a1 = (int) a;
