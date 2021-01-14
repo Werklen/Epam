@@ -1,4 +1,6 @@
 //Первые 3 задания
+import java.util.Scanner;
+
 Scanner sc = new Scanner(System.in);
 System.out.print("Введите а: ");
 double a = sc.nextDouble();
