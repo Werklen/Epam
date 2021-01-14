@@ -1,4 +1,6 @@
 //5 Секунды во временной формат
+import java.util.Scanner;
+
 int a = sc.nextInt();
 System.out.println(a);
 int b = a / 60;
