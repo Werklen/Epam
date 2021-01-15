@@ -1,0 +1,32 @@
+import java.util.Scanner;
+//Последовательность разбита на 3 другие. Найти суммы последовательностей, среди сумм найти max
+System.out.print("Введите число элементов: ");
+int n = sc.nextInt();
+int[] arr = new int[n];
+int k = 10;
+for (int i = 0; i < n; i++) {
+    arr[i] = k;
+    k += -1.1;
+    System.out.print(arr[i] + " ");
+}
+System.out.println();
+
+int sum1 = arr[0], sum2 = arr[1] - arr[0], sum3 = 0;
+for (int i = 0; i < n; i++) {
+    if (i % 2 == 0) {
+        sum2 += arr[i];
+    } else sum1 += arr[i];
+}
+sum3 = (sum1 + sum2) * 2 - arr[0] - arr[n - 1];
+
+System.out.println("max(" + sum1 + ", " + sum2 + ", " + sum3 + ")");
+
+int max = 0;
+if (sum1 > sum2) {
+    max = sum1;
+} else max = sum2;
+if (max < sum3) {
+    max = sum3;
+}
+System.out.println("max: "+max);
+sc.close();
