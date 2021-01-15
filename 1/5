@@ -1,0 +1,24 @@
+import java.util.Scanner;
+//Вывести элементы, большие своего порядкового номера
+int n = sc.nextInt();
+double[] arr = new double[n];
+
+int k = 10;
+for (int i = 0; i < n; i++) {
+    arr[i] = k;
+    k += -1.1;
+    System.out.print(arr[i] + " ");
+}
+System.out.println();
+
+boolean no = false;
+for (int i = 0; i < n; i++) {
+    if (arr[i] > i) {
+        System.out.print(arr[i] + " ");
+        no = true;
+    }
+}
+if (!no) {
+    System.out.println("Таких элементов нет.");
+}
+sc.close();
