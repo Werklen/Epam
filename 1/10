@@ -1,34 +1,20 @@
 import java.util.Scanner;
-// В массиве целых чисел с количеством элементов n найти наиболее часто встречающееся число. Если такихчисел несколько, то определить наименьшее из них.
+//Дан целочисленный массив с количеством элементов п. Сжать массив, выбросив из него каждый второй
+//элемент (освободившиеся элементы заполнить нулями). Примечание. Дополнительный массив не использовать.
 System.out.print("Введите число элементов: ");
 int n = sc.nextInt();
 int[] arr = new int[n];
-int count;
-int max = 0;
-int mini = 0;
 
 for (int i = 0; i < n; i++) {
     arr[i] = (int) (Math.random() * 30 - 10);
     System.out.print(arr[i] + " ");
 }
+System.out.println();
 
 for (int i = 0; i < n; i++) {
-    count = 0;
-    for (int j = i + 1; j < n; j++) {
-        if (arr[i] == arr[j]) {
-            count++;
-        }
+    if (i % 2 != 0 && i != 0) {
+        arr[i] = 0;
     }
-    if (count > max) {
-        max = count;
-        mini = i;
-    }
-    if (count == max && arr[mini] > arr[i]) {
-        mini=i;
-    }
+    System.out.print(arr[i] + " ");
 }
-
-System.out.println();
-System.out.println(arr[mini]);
-
 sc.close();
