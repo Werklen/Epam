@@ -1,0 +1,33 @@
+import java.util.Scanner;
+//Поменять местами min 
+int n = sc.nextInt();
+double[] arr = new double[n];
+
+for (int i = 0; i < n; i++) {
+    arr[i] = i - 3.1;
+    System.out.print(arr[i] + " ");
+}
+System.out.println();
+
+double max = arr[0], min = arr[0];
+int maxi = 0, mini = 0;
+
+for (int i = 0; i < n; i++) {
+    if (arr[i] > max) {
+        max = arr[i];
+        maxi = i;
+    }
+    if (min > arr[i]) {
+        min = arr[i];
+        mini = i;
+    }
+}
+double temp = arr[maxi];
+arr[maxi] = arr[mini];
+arr[mini] = temp;
+
+System.out.println(min + " " + max);
+for (int i = 0; i < n; i++) {
+    System.out.print(arr[i] + " ");
+}
+sc.close();
