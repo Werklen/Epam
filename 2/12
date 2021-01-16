@@ -1,0 +1,51 @@
+//Отсортировать строки матрицы по возрастанию и убыванию значений элементов.
+Scanner sc = new Scanner(System.in);
+System.out.print("Введите кол-во строк и столбцов: ");
+int n = sc.nextInt(), n1 = sc.nextInt();
+int[][] a = new int[n][n1];
+
+for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n1; j++) {
+        a[i][j] = (int) (Math.random() * 30 - 10);
+        System.out.print(a[i][j] + " ");
+    }
+    System.out.println();
+}
+
+for (int k = 0; k < n; k++) {
+    for (int i = 0; i < n; i++) {
+        for (int j = 1; j < n1; j++) {
+            if (a[i][j] < a[i][j - 1]) {
+                int temp = a[i][j];
+                a[i][j] = a[i][j - 1];
+                a[i][j - 1] = temp;
+            }
+        }
+    }
+}
+System.out.println();
+for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n1; j++) {
+        System.out.print(a[i][j] + " ");
+    }
+    System.out.println();
+}
+for (int k = 0; k < n; k++) {
+    for (int i = 0; i < n; i++) {
+        for (int j = 1; j < n1; j++) {
+            if (a[i][j] > a[i][j - 1]) {
+                int temp = a[i][j];
+                a[i][j] = a[i][j - 1];
+                a[i][j - 1] = temp;
+            }
+        }
+    }
+}
+System.out.println();
+for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n1; j++) {
+        System.out.print(a[i][j] + " ");
+    }
+    System.out.println();
+}
+sc.close();
