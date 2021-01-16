@@ -1,5 +1,6 @@
  //Дана матрица. Вывести k-ю строку и p-й столбец матрицы.
  import java.util.Scanner;
+ Scanner sc = new Scanner(System.in);
  System.out.print("Введите кол-во строк и столбцов: ");
 int n = sc.nextInt(), n1= sc.nextInt();
 int[][] arr = new int[n][n1];
