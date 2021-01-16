@@ -1,0 +1,34 @@
+ //Дана матрица. Вывести k-ю строку и p-й столбец матрицы.
+ import java.util.Scanner;
+ System.out.print("Введите кол-во строк и столбцов: ");
+int n = sc.nextInt(), n1= sc.nextInt();
+int[][] arr = new int[n][n1];
+
+for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n1; j++) {
+        arr[i][j] = (int) (Math.random() * 30 - 10);
+        System.out.print(arr[i][j] + " ");
+    }
+    System.out.println();
+}
+System.out.print("Введите номер строки и номер столбца: ");
+int x = sc.nextInt(), y = sc.nextInt();
+
+for (int i = 0; i < n; i++) {
+    if (i==x-1) {
+        System.out.print("Строка: ");
+        for (int j = 0; j < n1; j++) {
+            System.out.print(arr[i][j]+" ");
+        }
+    }
+}
+System.out.println();
+for (int i = 0; i < n1; i++) {
+    if (i==y-1) {
+        System.out.print("Столбец: ");
+        for (int j = 0; j < n; j++) {
+            System.out.print(arr[j][i]+" ");
+        }
+    }
+}
+sc.close();
