@@ -1,5 +1,6 @@
 //8. Дана последовательность целых чисел. Образовать новую последовательность, выбросив из исходной min
 import java.util.Scanner;
+Scanner sc = new Scanner(System.in);
 System.out.print("Введите число элементов: ");
 int n = sc.nextInt();
 int[] arr = new int[n];
