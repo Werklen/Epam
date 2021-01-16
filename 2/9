@@ -1,0 +1,35 @@
+Задана матрица неотрицательных чисел. Посчитать сумму элементов в каждом столбце. Определить, какой
+столбец содержит максимальную сумму.
+
+Scanner sc = new Scanner(System.in);
+System.out.print("Введите кол-во строк и столбцов: ");
+int n = sc.nextInt(), n1 = sc.nextInt();
+int[][] arr = new int[n][n1];
+
+for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n1; j++) {
+        arr[i][j] = (int) (Math.random() * 30);
+        System.out.print(arr[i][j] + " ");
+    }
+    System.out.println();
+}
+
+int[] a = new int[n1];
+int max=0;
+for (int i = 0; i < n1; i++) {
+    int sum = 0;
+    for (int j = 0; j < n; j++) {
+        sum += arr[j][i];
+    }
+    a[i] = sum;
+    if(max<sum) {
+        max=sum;
+    }
+}
+System.out.print("Суммы: ");
+for (int i = 0; i < n1; i++) {
+    System.out.print(a[i] + " ");
+}
+System.out.println();
+System.out.println(max);
+sc.close();
