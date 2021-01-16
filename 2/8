@@ -1,0 +1,32 @@
+В числовой матрице поменять местами два столбца любых столбца, т. е. все элементы одного столбца поставить
+на соответствующие им позиции другого, а его элементы второго переместить в первый. Номера столбцов вводит
+пользователь с клавиатуры.
+
+import java.util.Scanner;
+Scanner sc = new Scanner(System.in);
+System.out.print("Введите кол-во строк и столбцов: ");
+int n = sc.nextInt(), n1 = sc.nextInt();
+int[][] arr = new int[n][n1];
+
+for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n1; j++) {
+        arr[i][j] = (int) (Math.random() * 30 - 10);
+        System.out.print(arr[i][j] + " ");
+    }
+    System.out.println();
+}
+System.out.print("Введите номера столбцов: ");
+int y1 = sc.nextInt(), y2 = sc.nextInt();
+
+for (int i = 0; i < n; i++) {
+    int temp = arr[i][y1-1];
+    arr[i][y1-1] = arr[i][y2-1];
+    arr[i][y2-1] = temp;
+}
+for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n1; j++) {
+        System.out.print(arr[i][j] + " ");
+    }
+    System.out.println();
+}
+sc.close();
