@@ -1,5 +1,6 @@
 import java.util.Scanner;
 //Дана матрица. Вывести на экран все нечетные столбцы, у которых первый элемент больше последнего
+Scanner sc = new Scanner(System.in);
 System.out.print("Введите размерность: ");
 int n = sc.nextInt();
 int[][] arr = new int[n][n];
