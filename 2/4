@@ -1,0 +1,25 @@
+//Сформировать квадратную матрицу порядка n по заданному образцу(n - четное): 1 ... н
+                                                                              .  .  .
+                                                                              .  .  .
+                                                                              .  .  .
+                                                                              н ... 1
+import java.util.Scanner; 
+Scanner sc = new Scanner(System.in);
+System.out.print("Введите четное число: ");
+int n = sc.nextInt();
+while (n%2!=0) {
+    System.out.print("Эм... ");
+    n = sc.nextInt();
+}
+int[][] arr = new int[n][n];
+
+for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+        if(i%2==0) {
+            arr[i][j] = j+1;
+        } else arr[i][j] = n-j;
+        System.out.print(arr[i][j] + " ");
+    }
+    System.out.println();
+}
+sc.close();                                                                              
