@@ -1,5 +1,6 @@
 import java.util.Scanner;
 //Дана квадратная матрица. Вывести на экран элементы, стоящие на диагонали
+Scanner sc = new Scanner(System.in);
 System.out.print("Введите размерность: ");
 int n = sc.nextInt();
 int[][] arr = new int[n][n];
