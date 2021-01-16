@@ -1,5 +1,6 @@
 import java.util.Scanner;
 // В массиве целых чисел с количеством элементов n найти наиболее часто встречающееся число. Если такихчисел несколько, то определить наименьшее из них.
+Scanner sc = new Scanner(System.in);
 System.out.print("Введите число элементов: ");
 int n = sc.nextInt();
 int[] arr = new int[n];
