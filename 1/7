@@ -1,5 +1,6 @@
 import java.util.Scanner;
 //Последовательность разбита на 3 другие. Найти суммы последовательностей, среди сумм найти max
+Scanner sc = new Scanner(System.in);
 System.out.print("Введите число элементов: ");
 int n = sc.nextInt();
 int[] arr = new int[n];
