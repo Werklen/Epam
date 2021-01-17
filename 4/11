@@ -1,15 +1,24 @@
 Написать метод(методы), определяющий, в каком из данных двух чисел больше цифр.
 
 public static void which(int a, int b) {
-        if ((a-b)/10>0) {
-            System.out.println(a);
-        } else if ((a-b)/10==0) {
+        int count1=0, count2=0;
+        while(a>0) {
+            a/=10;
+            count1++;
+        }
+        while(b>0) {
+            b/=10;
+            count2++;
+        }
+        if (count1>count2) {
+            System.out.println("Первое.");
+        } else if (count1==count2) {
             System.out.println("Равное количество.");
-        } else System.out.println(b);
+        } else System.out.println("Второе.");
     }
     
-    Scanner sc = new Scanner(System.in);
-        System.out.print("Введите 2 числа: ");
-        int a = sc.nextInt(), b = sc.nextInt();
-        which(a, b);
-        sc.close();
+Scanner sc = new Scanner(System.in);
+System.out.print("Введите 2 числа: ");
+int a = sc.nextInt(), b = sc.nextInt();
+which(a, b);
+sc.close();
