@@ -10,3 +10,4 @@ System.out.print("Введите сторону шестиугольника: ")
 int a = sc.nextInt();
 double s = triangleSquare(a)*6;
 System.out.println(s);
+sc.close();
