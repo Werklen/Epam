@@ -1,0 +1,17 @@
+Изменить camelCase на snake_case
+
+public static void change(String[] s) {
+    for (int i = 0; i < s.length; i++) {
+        for (int j = 0; j < s[i].length(); j++) {
+            if (s[i].charAt(j) >= 'A' && s[i].charAt(j) <= 'Z') {
+                System.out.print("_" + Character.toLowerCase(s[i].charAt(j)));
+                j++;
+            }
+            System.out.print(s[i].charAt(j));
+        }
+        System.out.println();
+    }
+}
+
+String[] s = {"numberCount", "iHateHotSummer", "coolWinter", "don'tKnow"};
+change(s);
