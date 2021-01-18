@@ -1,0 +1,26 @@
+Создайте класс Test1 двумя переменными. Добавьте метод вывода на экран и методы изменения этих
+переменных. Добавьте метод, который находит сумму значений этих переменных, и метод, который находит
+наибольшее значение из этих двух переменных.
+
+public class Test1 {
+    int a, b;
+
+    void print() {
+        System.out.println(a + " " + b);
+    }
+
+    void setA(int a) {
+        this.a = a;
+    }
+
+    void setB(int b) {
+        this.b = b;
+    }
+
+    void max() {
+        if (a > b) {
+            System.out.println(a);
+        } else if (a == b) System.out.println("Равные");
+        else System.out.println(b);
+    }
+}
