@@ -1,0 +1,72 @@
+ Создайте класс Train, содержащий поля: название пункта назначения, номер поезда, время отправления.
+Создайте данные в массив из пяти элементов типа Train, добавьте возможность сортировки элементов массива по
+номерам поездов. Добавьте возможность вывода информации о поезде, номер которого введен пользователем.
+Добавьте возможность сортировки массив по пункту назначения, причем поезда с одинаковыми пунктами
+назначения должны быть упорядочены по времени отправления.
+
+public class Train {
+    String place;
+    int number;
+    String time;
+
+    Train(String place, int number, String time) {
+        this.place = place;
+        this.number = number;
+        this.time = time;
+    }
+
+    void print() {
+        System.out.println("Место назначения: " + this.place + ". Номер поезда: " + this.number + ". Время назначения: " + this.time);
+    }
+}
+
+public class Main {
+    static void sortByPlace(Train trains[]) {
+        for (int j = 0; j < trains.length; j++) {
+            for (int i = j + 1; i < trains.length; i++) {
+                if (trains[i].place.compareTo(trains[j].place) < 0) {
+                    Train temp = trains[j];
+                    trains[j] = trains[i];
+                    trains[i] = temp;
+                } else if (trains[i].place.compareTo(trains[j].place) == 0) {
+                    if (trains[i].time.compareTo(trains[j].time) > 0) {
+                        Train temp = trains[j];
+                        trains[j] = trains[i];
+                        trains[i] = temp;
+                    }
+                }
+            }
+        }
+    }
+
+    static void findTrain(Train trains[], int number) {
+        for (int i = 0; i < trains.length; i++) {
+            if (trains[i].number == number) {
+                trains[i].print();
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        Train t1 = new Train("Aaa", 5, "16:30");
+        Train t2 = new Train("Bbb", 6, "16:50");
+        Train t3 = new Train("A", 4, "18:20");
+        Train t4 = new Train("Gshfb", 9, "9:20");
+        Train t5 = new Train("A", 11, "7:20");
+        Train trains[] = new Train[]{t1, t2, t3, t4, t5};
+
+        for (Train t : trains) {
+            t.print();
+        }
+        sortByPlace(trains);
+        System.out.println();
+        for (Train t : trains) {
+            t.print();
+        }
+        System.out.print("Введите номер поезда: ");
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+        findTrain(trains, number);
+        sc.close();
+    }
+}
