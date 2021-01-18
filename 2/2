@@ -1,0 +1,4 @@
+Заменить "а" на "ab".
+
+String s = "amber, alcan, ajfrkjcs.";
+System.out.println(s.replace("a","ab"));
