@@ -1,0 +1,71 @@
+//Создать объект класса Текст, используя классы Предложение, Слово.
+//Методы: дополнить текст, вывести на консоль текст, заголовок текста.
+
+public class Text {
+    private String body = "";
+    private String title;
+
+    public Text(Word word) {
+        title = word.getWord();
+    }
+
+    public Text(Phrase phrase) {
+        title = phrase.getPhrase();
+    }
+
+    public void addText(Word word) {
+        body += word.getWord() + " ";
+    }
+
+    public void addText(Phrase phrase) {
+        body += phrase.getPhrase() + " ";
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+}
+
+public class Phrase {
+    private String phrase = "";
+
+    Phrase(String phrase) {
+        this.phrase = phrase;
+    }
+
+    public void addPhrase(Word word) {
+        phrase += word.getWord();
+    }
+
+    public String getPhrase() {
+        return phrase;
+    }
+}
+
+public class Word {
+    private String word;
+
+    public Word(String word) {
+        this.word = word;
+    }
+
+    public String getWord() {
+        return word;
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+        Word word1 = new Word("Название");
+        Text text1 = new Text(word1);
+        Phrase phrase1 = new Phrase("Не буду я по одному слову пихать, бред какой-то...");
+        text1.addText(phrase1);
+        System.out.println(text1.getTitle());
+        System.out.println(text1.getBody());
+    }
+}
